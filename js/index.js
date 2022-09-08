@@ -1,9 +1,13 @@
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+  return x.toLocaleString("en-US");
+  // return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
 }
 
 function DisplayChange(newvalue) {
-  document.getElementById("valuebtc").innerHTML = numberWithCommas(newvalue);
+  document.getElementById("valuebtc").innerHTML = numberWithCommas(
+    parseInt(newvalue)
+  );
+  console.log(numberWithCommas(newvalue));
   document.getElementById("btcget").value = newvalue;
 
   var price = document.getElementById("price").value;
@@ -49,7 +53,9 @@ function DisplayChange(newvalue) {
     styleText: true,
   });
   (document.querySelector(".circles-text").style.fontSize = "28px"),
-    (document.querySelector(".circles-text").textContent = value + "%");
+    (document.querySelector(".circles-text").textContent = window.value
+      ? value + "%"
+      : "");
 }
 var persen = 1458;
 
@@ -70,5 +76,6 @@ var myCircle = Circles.create({
   styleText: true,
 });
 
-(document.querySelector(".circles-text").style.fontSize = "28px"),
-  (document.querySelector(".circles-text").textContent = value + "%");
+if (document.querySelector(".circles-text"))
+  (document.querySelector(".circles-text").style.fontSize = "28px"),
+    (document.querySelector(".circles-text").textContent = value + "%");

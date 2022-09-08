@@ -2,7 +2,7 @@ const package1 = document.querySelector("#package1");
 const package2 = document.querySelector("#package2");
 const package3 = document.querySelector("#package3");
 const package4 = document.querySelector("#package4");
-document.querySelector("#buy-contract").addEventListener("click", (e) => {
+document.querySelector("#buy-contract")?.addEventListener("click", (e) => {
   e.preventDefault();
   if (package1.checked) {
     window.open(
@@ -29,12 +29,16 @@ document.querySelector("#buy-contract").addEventListener("click", (e) => {
 
 //Thousand seperator
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+  return x.toLocaleString("en-US");
+  // return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
 }
-document.getElementById("valuebtc").innerHTML = numberWithCommas(4500000000);
-document.getElementById("pricefor").innerHTML = numberWithCommas(28900000);
-document.getElementById("invested").innerHTML = numberWithCommas(28900000);
-document.getElementById("totalprofit").innerHTML = numberWithCommas(450262000);
+window.addEventListener("load", function () {
+  document.getElementById("valuebtc").innerHTML = numberWithCommas(4500000000);
+  document.getElementById("pricefor").innerHTML = numberWithCommas(28900000);
+  document.getElementById("invested").innerHTML = numberWithCommas(28900000);
+  document.getElementById("totalprofit").innerHTML =
+    numberWithCommas(450262000);
+});
 // document.getElementById("totalinvested").innerHTML = numberWithCommas(11900000)
 
 function checkButton() {
