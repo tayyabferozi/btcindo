@@ -1,30 +1,32 @@
-const package1 = document.querySelector("#package1");
-const package2 = document.querySelector("#package2");
-const package3 = document.querySelector("#package3");
-const package4 = document.querySelector("#package4");
-document.querySelector("#buy-contract")?.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (package1.checked) {
-    window.open(
-      "https://minestack.id/checkout/new?p%5B0%5D%5Bid%5D=P-2wk7S3&p%5B0%5D%5Bv%5D=0%3A2&p%5B0%5D%5Bc%5D=1 ",
-      "_blank"
-    );
-  } else if (package2.checked) {
-    window.open(
-      "https://minestack.id/checkout/new?p%5B0%5D%5Bid%5D=P-2wk7S3&p%5B0%5D%5Bv%5D=0%3A3&p%5B0%5D%5Bc%5D=1",
-      "_blank"
-    );
-  } else if (package3.checked) {
-    window.open(
-      "https://minestack.id/checkout/new?p%5B0%5D%5Bid%5D=P-2wk7S3&p%5B0%5D%5Bv%5D=0%3A5&p%5B0%5D%5Bc%5D=1",
-      "_blank"
-    );
-  } else if (package4.checked) {
-    window.open(
-      "https://minestack.id/checkout/new?p%5B0%5D%5Bid%5D=P-2wk7S3&p%5B0%5D%5Bv%5D=0%3A7&p%5B0%5D%5Bc%5D=1",
-      "_blank"
-    );
-  }
+window.addEventListener("load", function () {
+  const package1 = document.querySelector("#package1");
+  const package2 = document.querySelector("#package2");
+  const package3 = document.querySelector("#package3");
+  const package4 = document.querySelector("#package4");
+  document.querySelector("#buy-contract").addEventListener("click", (e) => {
+    e.preventDefault();
+    if (package1.checked) {
+      window.open(
+        "https://minestack.id/checkout/new?p%5B0%5D%5Bid%5D=P-2wk7S3&p%5B0%5D%5Bv%5D=0%3A2&p%5B0%5D%5Bc%5D=1 ",
+        "_blank"
+      );
+    } else if (package2.checked) {
+      window.open(
+        "https://minestack.id/checkout/new?p%5B0%5D%5Bid%5D=P-2wk7S3&p%5B0%5D%5Bv%5D=0%3A3&p%5B0%5D%5Bc%5D=1",
+        "_blank"
+      );
+    } else if (package3.checked) {
+      window.open(
+        "https://minestack.id/checkout/new?p%5B0%5D%5Bid%5D=P-2wk7S3&p%5B0%5D%5Bv%5D=0%3A5&p%5B0%5D%5Bc%5D=1",
+        "_blank"
+      );
+    } else if (package4.checked) {
+      window.open(
+        "https://minestack.id/checkout/new?p%5B0%5D%5Bid%5D=P-2wk7S3&p%5B0%5D%5Bv%5D=0%3A7&p%5B0%5D%5Bc%5D=1",
+        "_blank"
+      );
+    }
+  });
 });
 
 //Thousand seperator
